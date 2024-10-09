@@ -2,6 +2,7 @@ import "./Color.css";
 import Button from "../Button/Button";
 import { useState } from "react";
 import ColorForm from "../ColorForm/ColorForm";
+import CopyToClipboard from "../CopyToClipboard";
 export default function ColorCard({ color, onDeleteColor, onEditColor }) {
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [isEditMode, setIsEditMode] = useState(false);
@@ -15,6 +16,7 @@ export default function ColorCard({ color, onDeleteColor, onEditColor }) {
       }}
     >
       <h3 className="color-card-headline">{color.hex}</h3>
+      <CopyToClipboard hex={color.hex} />
       <h4>{color.role}</h4>
       <p>contrast: {color.contrastText}</p>
 
